@@ -12,5 +12,6 @@ export const validateInput = (input, size) => {
     return false
   if (!input.every(line => line.length === size && [...line].every(c => !isNaN(c) && isFinite(c))))
     return false
+  //todo: check if pieces are valid sequence of numbers
   return true
 }
