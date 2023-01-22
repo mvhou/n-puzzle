@@ -6,7 +6,7 @@ import { logger } from "./logger.js";
 
   const files = process.argv.slice(2);
 
-  files.forEach(file => {
-    logger.Log(["pass", "fail"][run(file)], file.split('/').at(-1))
+  files.forEach((file) => {
+    logger.Log(["pass", "fail"][run(file)], file.split("/").at(-1));
   });
 })();
