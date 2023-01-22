@@ -19,6 +19,7 @@ export const validateInput = (input, size) =>
     (line) =>
       line.length === size && line.every((c) => !isNaN(c) && isFinite(c))
   ) &&
+  input.flat().reduce((min, num) => (num < min ? num : min)) === 0 &&
   input
     .flat()
     .sort((a, b) => a - b)
