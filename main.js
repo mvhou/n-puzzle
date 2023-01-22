@@ -7,10 +7,12 @@ import { getLines } from "./read.js"
     logger.Error("no input file")
 
   const filePath = process.argv[2]
-  const input = removeComments(getLines(filePath))
-  
-  if (!input)
+  const lines = getLines(filePath)
+
+  if (!lines)
     return logger.Error("file not found", filePath)
+
+  const input = removeComments(lines)
   
   const size = getSize(input)
   
@@ -21,6 +23,5 @@ import { getLines } from "./read.js"
   
   if (!validateInput(puzzle, size))
     return logger.Error("invalid puzzle", puzzle)
-
   logger.Log("input validated")
 })()
