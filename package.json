@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "solve": "node main.js",
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest --silent"
   },
   "repository": {
     "type": "git",
