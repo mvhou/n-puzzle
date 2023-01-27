@@ -15,9 +15,16 @@ export const logger = (() => {
     else console.log(`${label}: ${message}`);
   };
 
+  const Print = (puzzle, size) => {
+    for (let i = 0; i < size * size; i += size) {
+      console.log(puzzle.slice(i, i+size))
+    }
+  }
+
   return {
     Error,
     Peek,
     Log,
+    Print,
   };
 })();

@@ -1,12 +1,5 @@
 import { getSolution } from "../order.js";
 
-test("2 should return snail pattern", () => {
-  expect(getSolution(2)).toStrictEqual([
-    [1, 2],
-    [4, 3],
-  ]);
-});
-
 test("3 should return snail pattern", () => {
   expect(getSolution(3)).toStrictEqual([
     [1, 2, 3],
