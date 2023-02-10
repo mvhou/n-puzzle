@@ -74,7 +74,7 @@ if __name__ == "__main__":
 		print("Can't be both solvable AND unsolvable, dummy !")
 		sys.exit(1)
 
-	if args.size < 3:
+	if args.size < 2:
 		print("Can't generate a puzzle with size lower than 2. It says so in the help. Dummy.")
 		sys.exit(1)
 

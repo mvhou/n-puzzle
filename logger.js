@@ -17,9 +17,10 @@ export const logger = (() => {
 
   const Print = (puzzle, size) => {
     for (let i = 0; i < size * size; i += size) {
-      console.log(puzzle.slice(i, i+size))
+      console.log(puzzle.slice(i, i + size));
     }
-  }
+    console.log("\n");
+  };
 
   return {
     Error,

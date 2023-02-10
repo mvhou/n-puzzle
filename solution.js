@@ -1,17 +1,19 @@
 export const generateConsecutive = (size) => {
-  const solution = Array(size * size).fill(0).map((_,i) => i + 1)
-  const lookup = solution.map((_,i) => i - 1)
-  solution[size * size - 1] = 0
-  lookup[0] = size * size - 1
-  return { solution, lookup }
-}
+  const solution = Array(size * size)
+    .fill(0)
+    .map((_, i) => i + 1);
+  const lookup = solution.map((_, i) => i - 1);
+  solution[size * size - 1] = 0;
+  lookup[0] = size * size - 1;
+  return { solution, lookup };
+};
 
 export const generateSnail = (size) => {
   const arr = Array(size)
     .fill(null)
     .map(() => Array(size).fill(0));
-  const lookup = new Uint8Array(size * size)
-  const solution = new Uint8Array(size * size)
+  const lookup = new Uint8Array(size * size);
+  const solution = new Uint8Array(size * size);
   const getDirection = (idx) =>
     [
       { x: 1, y: 0 },
@@ -33,14 +35,13 @@ export const generateSnail = (size) => {
     }
     direction++;
   }
-  arr[y][x] = 0
-  const temp = arr.flat()
-  console.table(arr)
-  solution.map((_,i) => temp[i])
+  arr[y][x] = 0;
+  const temp = arr.flat();
+  solution.map((_, i) => temp[i]);
   arr.flat().forEach((x, i) => {
-    solution[i] = x
-    lookup[x] = i
-  })
+    solution[i] = x;
+    lookup[x] = i;
+  });
 
-  return { solution, lookup }
-}
+  return { solution, lookup };
+};
